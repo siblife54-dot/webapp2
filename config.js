@@ -4,9 +4,9 @@ window.APP_CONFIG = {
 
   // Брендинг
   brandName: "MindCore project",
-  accentColor: "#22C55E",
-  backgroundColor: "#0B1220",
-  cardColor: "#0F1B33",
+  accentColor: "#7C3AED",
+  backgroundColor: "#F4F6FA",
+  cardColor: "#FFFFFF",
 
   // Курс
   courseId: "course_test",

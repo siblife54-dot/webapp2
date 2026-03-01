@@ -573,3 +573,130 @@ a { color: inherit; }
   text-transform: uppercase;
   flex: 0 0 auto;
 }
+/* =========================
+   LIGHT THEME OVERRIDES
+   Paste at the VERY END of styles.css
+   ========================= */
+
+/* более правильные “светлые” бордеры и тени */
+:root{
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* убираем тёмный/фиолетовый фон-градиент */
+html, body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* базовые карточки — без серого градиента */
+.card{
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* аватар и бейджи — под светлую тему */
+.avatar{
+  background: linear-gradient(135deg, rgba(15,23,42,.06), rgba(15,23,42,.02)) !important;
+  border: 1px solid var(--border) !important;
+}
+.badge{
+  border: 1px solid var(--border) !important;
+  color: var(--muted) !important;
+}
+
+/* прогресс */
+.progress-top{
+  color: var(--muted) !important;
+}
+.progress-bar{
+  background: rgba(15,23,42,0.08) !important;
+}
+
+/* список уроков — делаем белые “нормальные” карточки */
+.lesson-card{
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* превью — убираем тёмные неоновые наложения */
+.lesson-preview{
+  background: rgba(15,23,42,0.03) !important;
+}
+.lesson-preview::after{
+  display: none !important;
+}
+
+/* мета и лейблы */
+.lesson-day{
+  color: var(--muted) !important;
+}
+.status.done{
+  color: #3b0764 !important;
+  background: rgba(124, 58, 237, 0.12) !important;
+}
+.status.locked{
+  color: #7f1d1d !important;
+  background: rgba(239, 68, 68, 0.10) !important;
+}
+
+/* кнопки — под светлый фон */
+.btn{
+  color: #ffffff !important;
+  border-color: transparent !important;
+  background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 70%, black)) !important;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.18) !important;
+}
+
+/* lesson page блоки (видео/контент/материалы) — белые */
+.video-wrap,
+.video-link-card,
+.content-card,
+.attachments,
+.lesson-block{
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* тексты внутри урока */
+.lesson-content p{
+  color: var(--text) !important;
+}
+.lesson-content h3{
+  color: var(--text) !important;
+}
+.lesson-content hr{
+  border-top: 1px solid var(--border) !important;
+}
+
+/* блоки note/warning/soft — светлые */
+.lesson-note{
+  background: rgba(124,58,237,0.08) !important;
+  border-left-color: var(--accent) !important;
+}
+.lesson-warning{
+  background: rgba(239,68,68,0.08) !important;
+}
+.lesson-soft{
+  background: rgba(15,23,42,0.03) !important;
+}
+
+/* материалы: делаем как iOS list */
+.lesson-attachments #attachmentsList a.attach-link{
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 8px 20px rgba(15,23,42,0.06) !important;
+}
+.lesson-attachments #attachmentsList .attach-name::before{
+  background: rgba(15,23,42,0.04) !important;
+  border: 1px solid var(--border) !important;
+}
+.lesson-attachments #attachmentsList .file-tag{
+  color: #3b0764 !important;
+  background: rgba(124,58,237,0.10) !important;
+  border: 1px solid rgba(124,58,237,0.25) !important;
+}

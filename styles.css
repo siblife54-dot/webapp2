@@ -869,3 +869,144 @@ a { color: inherit; }
   background: rgba(109, 40, 217, 0.12);
   border-color: rgba(109, 40, 217, 0.24);
 }
+
+/* =========================
+   THEME: LIGHT_AURORA (wow)
+   ========================= */
+:root[data-theme="light-glass"] {
+  --bg: #f6f8ff;
+  --bg-2: #eef2ff;
+  --card: rgba(255, 255, 255, 0.8);
+  --card-2: rgba(255, 255, 255, 0.72);
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #6d28d9;
+  --accent-2: #84cc16;
+  --border: rgba(15, 23, 42, 0.11);
+  --shadow: 0 14px 34px rgba(15, 23, 42, 0.1), 0 4px 10px rgba(109, 40, 217, 0.08);
+  --shadow-strong: 0 26px 56px rgba(15, 23, 42, 0.14), 0 8px 20px rgba(109, 40, 217, 0.14);
+  --ring: 0 0 0 1px rgba(255, 255, 255, 0.64) inset;
+}
+
+:root[data-theme="light-glass"],
+:root[data-theme="light-glass"] body {
+  color: var(--text);
+  background:
+    radial-gradient(820px 560px at 8% -12%, rgba(109, 40, 217, 0.17), transparent 62%),
+    radial-gradient(740px 540px at 102% 8%, rgba(59, 130, 246, 0.14), transparent 60%),
+    radial-gradient(680px 500px at 50% 116%, rgba(132, 204, 22, 0.08), transparent 66%),
+    radial-gradient(2px 2px at 24px 32px, rgba(15, 23, 42, 0.02) 50%, transparent 52%),
+    radial-gradient(2px 2px at 110px 96px, rgba(15, 23, 42, 0.02) 50%, transparent 52%),
+    linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 56%, #fbfcff 100%);
+  background-size: auto, auto, auto, 140px 140px, 140px 140px, auto;
+}
+
+:root[data-theme="light-glass"] .card,
+:root[data-theme="light-glass"] .lesson-card,
+:root[data-theme="light-glass"] .video-link-card,
+:root[data-theme="light-glass"] .content-card,
+:root[data-theme="light-glass"] .attachments,
+:root[data-theme="light-glass"] .lesson-block,
+:root[data-theme="light-glass"] .progress-wrap,
+:root[data-theme="light-glass"] .video-wrap {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.72));
+  border-color: var(--border);
+  box-shadow: var(--ring), var(--shadow);
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :root[data-theme="light-glass"] .card,
+  :root[data-theme="light-glass"] .lesson-card,
+  :root[data-theme="light-glass"] .video-link-card,
+  :root[data-theme="light-glass"] .content-card,
+  :root[data-theme="light-glass"] .attachments,
+  :root[data-theme="light-glass"] .lesson-block,
+  :root[data-theme="light-glass"] .progress-wrap,
+  :root[data-theme="light-glass"] .video-wrap {
+    -webkit-backdrop-filter: blur(14px) saturate(132%);
+    backdrop-filter: blur(14px) saturate(132%);
+  }
+}
+
+:root[data-theme="light-glass"] .lesson-card {
+  box-shadow: var(--ring), var(--shadow-strong);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+:root[data-theme="light-glass"] .lesson-card-body,
+:root[data-theme="light-glass"] .lesson-content,
+:root[data-theme="light-glass"] .content-card,
+:root[data-theme="light-glass"] .attachments,
+:root[data-theme="light-glass"] .video-link-card,
+:root[data-theme="light-glass"] .lesson-card h3,
+:root[data-theme="light-glass"] .lesson-content h2,
+:root[data-theme="light-glass"] .lesson-content h3 {
+  color: var(--text);
+}
+
+:root[data-theme="light-glass"] .lesson-card p,
+:root[data-theme="light-glass"] .lesson-subtitle,
+:root[data-theme="light-glass"] .profile-meta p,
+:root[data-theme="light-glass"] .progress-top,
+:root[data-theme="light-glass"] .top-back,
+:root[data-theme="light-glass"] .badge {
+  color: var(--muted);
+}
+
+:root[data-theme="light-glass"] .lesson-day {
+  color: #334155;
+}
+
+:root[data-theme="light-glass"] .progress-bar {
+  background: rgba(148, 163, 184, 0.3);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+:root[data-theme="light-glass"] .progress-fill {
+  background: linear-gradient(90deg, #8b5cf6 0%, var(--accent) 52%, #4f46e5 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.34) inset, 0 8px 16px rgba(109, 40, 217, 0.35);
+}
+
+:root[data-theme="light-glass"] .btn,
+:root[data-theme="light-glass"] .btn-primary {
+  color: #fff;
+  border-color: rgba(109, 40, 217, 0.34);
+  background: linear-gradient(135deg, #7c3aed 0%, var(--accent) 58%, #4f46e5 100%);
+  box-shadow: 0 10px 22px rgba(109, 40, 217, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.22) inset;
+}
+
+:root[data-theme="light-glass"] .btn:active,
+:root[data-theme="light-glass"] .btn-primary:active {
+  transform: scale(0.98);
+}
+
+:root[data-theme="light-glass"] .status.done {
+  color: #365314;
+  background: rgba(132, 204, 22, 0.18);
+  border: 1px solid rgba(132, 204, 22, 0.32);
+}
+
+:root[data-theme="light-glass"] .status.locked {
+  color: #9f1239;
+  background: rgba(244, 63, 94, 0.14);
+  border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+:root[data-theme="light-glass"] .lesson-preview {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.08) 100%),
+    linear-gradient(128deg, transparent 35%, rgba(255, 255, 255, 0.16) 50%, transparent 65%),
+    linear-gradient(145deg, rgba(109, 40, 217, 0.08), rgba(59, 130, 246, 0.06));
+}
+
+:root[data-theme="light-glass"] .lesson-preview::after {
+  display: none;
+}
+
+:root[data-theme="light-glass"] .file-tag,
+:root[data-theme="light-glass"] .lesson-attachments #attachmentsList .file-tag {
+  color: #3f2a93;
+  background: rgba(109, 40, 217, 0.11);
+  border-color: rgba(109, 40, 217, 0.24);
+}

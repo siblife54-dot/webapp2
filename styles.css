@@ -105,8 +105,8 @@ a { color: inherit; }
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 85%, white), var(--accent));
-  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 55%, transparent);
+  background: linear-gradient(90deg, #a78bfa, var(--accent));
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.45);
   transition: width .35s ease;
 }
 
@@ -120,7 +120,7 @@ a { color: inherit; }
 .lesson-card {
   width: 100%;
   border-radius: var(--radius-md);
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+  border: 1px solid rgba(139, 92, 246, 0.28);
   background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(139, 92, 246, 0.08) inset;
   overflow: hidden;
@@ -229,7 +229,7 @@ a { color: inherit; }
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 82%, black));
+  background: linear-gradient(180deg, var(--accent), #6d28d9);
   border-color: transparent;
 }
 
@@ -420,7 +420,7 @@ a { color: inherit; }
 
 /* Links inside lesson */
 .lesson-content a {
-  color: color-mix(in srgb, var(--accent) 85%, white);
+  color: #c4b5fd;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -572,4 +572,169 @@ a { color: inherit; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   flex: 0 0 auto;
+}
+
+
+@supports (color: color-mix(in srgb, white, black)) {
+  .progress-fill {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 85%, white), var(--accent));
+    box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+
+  .lesson-card {
+    border-color: color-mix(in srgb, var(--accent) 25%, var(--border));
+  }
+
+  .btn-primary {
+    background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 82%, black));
+  }
+
+  .lesson-content a {
+    color: color-mix(in srgb, var(--accent) 85%, white);
+  }
+}
+
+html[data-theme="light-glass"] {
+  --bg: #f5f7fb;
+  --card: rgba(255, 255, 255, 0.86);
+  --card-2: rgba(255, 255, 255, 0.72);
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #7c3aed;
+  --border: rgba(15, 23, 42, 0.12);
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme="light-glass"] body {
+  background:
+    radial-gradient(900px 560px at 12% -18%, rgba(124, 58, 237, 0.16), transparent 58%),
+    radial-gradient(760px 420px at 104% 10%, rgba(59, 130, 246, 0.14), transparent 56%),
+    var(--bg);
+}
+
+html[data-theme="light-glass"] .card,
+html[data-theme="light-glass"] .video-link-card,
+html[data-theme="light-glass"] .content-card,
+html[data-theme="light-glass"] .attachments,
+html[data-theme="light-glass"] .lesson-block,
+html[data-theme="light-glass"] .state {
+  background: rgba(255, 255, 255, 0.84);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  html[data-theme="light-glass"] .card,
+  html[data-theme="light-glass"] .video-link-card,
+  html[data-theme="light-glass"] .content-card,
+  html[data-theme="light-glass"] .attachments,
+  html[data-theme="light-glass"] .lesson-block,
+  html[data-theme="light-glass"] .state {
+    -webkit-backdrop-filter: blur(12px) saturate(115%);
+    backdrop-filter: blur(12px) saturate(115%);
+  }
+}
+
+html[data-theme="light-glass"] .avatar {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(59, 130, 246, 0.12));
+}
+
+html[data-theme="light-glass"] .progress-bar {
+  background: rgba(15, 23, 42, 0.1);
+}
+
+html[data-theme="light-glass"] .progress-fill {
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.32);
+}
+
+html[data-theme="light-glass"] .lesson-card {
+  border-color: rgba(15, 23, 42, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme="light-glass"] .lesson-preview {
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(124, 58, 237, 0.18), transparent 58%),
+    linear-gradient(150deg, rgba(59, 130, 246, 0.14), rgba(255, 255, 255, 0.58));
+}
+
+html[data-theme="light-glass"] .lesson-preview::after {
+  display: none;
+}
+
+html[data-theme="light-glass"] .lesson-day,
+html[data-theme="light-glass"] .lesson-content h3 {
+  color: var(--text);
+}
+
+html[data-theme="light-glass"] .status.done {
+  color: #5b21b6;
+  background: rgba(124, 58, 237, 0.14);
+}
+
+html[data-theme="light-glass"] .status.locked {
+  color: #9f1239;
+  background: rgba(244, 63, 94, 0.14);
+}
+
+html[data-theme="light-glass"] .btn {
+  border-color: rgba(124, 58, 237, 0.36);
+  background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.26);
+}
+
+html[data-theme="light-glass"] .btn-primary {
+  background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+}
+
+html[data-theme="light-glass"] .lesson-content p {
+  color: #1e293b;
+}
+
+html[data-theme="light-glass"] .lesson-content a {
+  color: #6d28d9;
+}
+
+html[data-theme="light-glass"] .lesson-content hr {
+  border-top-color: rgba(15, 23, 42, 0.14);
+}
+
+html[data-theme="light-glass"] .lesson-note {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+html[data-theme="light-glass"] .lesson-warning {
+  background: rgba(244, 63, 94, 0.1);
+}
+
+html[data-theme="light-glass"] .lesson-soft {
+  border-left-color: rgba(15, 23, 42, 0.24);
+  background: rgba(15, 23, 42, 0.04);
+}
+
+html[data-theme="light-glass"] .lesson-attachments #attachmentsList a.attach-link {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+@media (hover:hover) {
+  html[data-theme="light-glass"] .lesson-attachments #attachmentsList a.attach-link:hover {
+    background: rgba(248, 250, 252, 0.98);
+    border-color: rgba(124, 58, 237, 0.28);
+  }
+}
+
+html[data-theme="light-glass"] .lesson-attachments #attachmentsList .attach-name::before {
+  background: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+html[data-theme="light-glass"] .file-tag,
+html[data-theme="light-glass"] .lesson-attachments #attachmentsList .file-tag {
+  border-color: rgba(124, 58, 237, 0.3);
+  background: rgba(124, 58, 237, 0.12);
+  color: #4c1d95;
 }

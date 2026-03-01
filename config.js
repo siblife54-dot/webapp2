@@ -9,10 +9,10 @@ window.APP_CONFIG = {
   cardColor: "#12243a",
 
   // Курс
-  courseId: "course_alpha",
+  courseId: "course_test",
 
   // Публичный CSV URL из Google Sheets
-  googleSheetCsvUrl: "https://docs.google.com/spreadsheets/d/1_aKaPtKHa43nNAxF0KKFgRwZwqe7zoVjOJ8H9QcMHEs/export?format=csv",
+  googleSheetCsvUrl: "https://docs.google.com/spreadsheets/d/2PACX-1vQNflPaDr-wv9828cCoILq6HZZvXxHcKdXhDyJlos26wbzZnlNE6fzfRGFpDFrSCSPrQdUoAiOApzBP/export?format=csv",
 
   // Локальный демо-файл
   sampleCsvPath: "./sample-sheet.csv"

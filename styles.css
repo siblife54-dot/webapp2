@@ -1,14 +1,16 @@
 :root {
-  --bg: #F4F6FA;
-  --card: #FFFFFF;
-  --card-2: #FFFFFF;
-  --text: #0F172A;
-  --muted: #64748B;
+  :root {
+  --bg: #F6F7FB;
+  --card: rgba(255,255,255,0.82);
+  --card-2: rgba(255,255,255,0.95);
+  --text: #0B1220;
+  --muted: #5B6B84;
   --accent: #7C3AED;
-  --border: rgba(255, 255, 255, 0.09);
-  --radius-lg: 20px;
+
+  --border: rgba(15, 23, 42, 0.10);
+  --radius-lg: 22px;
   --radius-md: 18px;
-  --shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  --shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
 }
 
 * { box-sizing: border-box; }

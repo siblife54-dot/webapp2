@@ -105,8 +105,8 @@ a { color: inherit; }
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 85%, white), var(--accent));
-  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 55%, transparent);
+  background: linear-gradient(90deg, #a78bfa, var(--accent));
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.45);
   transition: width .35s ease;
 }
 
@@ -120,7 +120,7 @@ a { color: inherit; }
 .lesson-card {
   width: 100%;
   border-radius: var(--radius-md);
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+  border: 1px solid rgba(139, 92, 246, 0.28);
   background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(139, 92, 246, 0.08) inset;
   overflow: hidden;
@@ -229,7 +229,7 @@ a { color: inherit; }
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 82%, black));
+  background: linear-gradient(180deg, var(--accent), #6d28d9);
   border-color: transparent;
 }
 
@@ -420,7 +420,7 @@ a { color: inherit; }
 
 /* Links inside lesson */
 .lesson-content a {
-  color: color-mix(in srgb, var(--accent) 85%, white);
+  color: #c4b5fd;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -572,4 +572,300 @@ a { color: inherit; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   flex: 0 0 auto;
+}
+
+
+@supports (color: color-mix(in srgb, white, black)) {
+  .progress-fill {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 85%, white), var(--accent));
+    box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+
+  .lesson-card {
+    border-color: color-mix(in srgb, var(--accent) 25%, var(--border));
+  }
+
+  .btn-primary {
+    background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 82%, black));
+  }
+
+  .lesson-content a {
+    color: color-mix(in srgb, var(--accent) 85%, white);
+  }
+}
+
+/* ===== LIGHT_GLASS THEME ===== */
+:root[data-theme="light-glass"] {
+  --bg: #f4f6fa;
+  --card: rgba(255, 255, 255, 0.85);
+  --card-2: rgba(255, 255, 255, 0.8);
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #7c3aed;
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
+}
+
+:root[data-theme="light-glass"],
+:root[data-theme="light-glass"] body {
+  background:
+    radial-gradient(900px 560px at 12% -18%, rgba(124, 58, 237, 0.16), transparent 58%),
+    radial-gradient(760px 420px at 104% 10%, rgba(59, 130, 246, 0.14), transparent 56%),
+    linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+}
+
+:root[data-theme="light-glass"] .card,
+:root[data-theme="light-glass"] .video-link-card,
+:root[data-theme="light-glass"] .content-card,
+:root[data-theme="light-glass"] .attachments,
+:root[data-theme="light-glass"] .lesson-block,
+:root[data-theme="light-glass"] .state {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :root[data-theme="light-glass"] .card,
+  :root[data-theme="light-glass"] .video-link-card,
+  :root[data-theme="light-glass"] .content-card,
+  :root[data-theme="light-glass"] .attachments,
+  :root[data-theme="light-glass"] .lesson-block,
+  :root[data-theme="light-glass"] .state {
+    -webkit-backdrop-filter: blur(10px) saturate(115%);
+    backdrop-filter: blur(10px) saturate(115%);
+  }
+}
+
+:root[data-theme="light-glass"] .avatar {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(59, 130, 246, 0.12));
+}
+
+:root[data-theme="light-glass"] .progress-bar {
+  background: rgba(15, 23, 42, 0.1);
+}
+
+:root[data-theme="light-glass"] .progress-fill {
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.32);
+}
+
+:root[data-theme="light-glass"] .lesson-card {
+  border-color: rgba(15, 23, 42, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme="light-glass"] .lesson-preview {
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(124, 58, 237, 0.18), transparent 58%),
+    linear-gradient(150deg, rgba(59, 130, 246, 0.14), rgba(255, 255, 255, 0.58));
+}
+
+:root[data-theme="light-glass"] .lesson-preview::after {
+  display: none;
+}
+
+:root[data-theme="light-glass"] .lesson-day,
+:root[data-theme="light-glass"] .lesson-content h3 {
+  color: var(--text);
+}
+
+:root[data-theme="light-glass"] .status.done {
+  color: #5b21b6;
+  background: rgba(124, 58, 237, 0.14);
+}
+
+:root[data-theme="light-glass"] .status.locked {
+  color: #9f1239;
+  background: rgba(244, 63, 94, 0.14);
+}
+
+:root[data-theme="light-glass"] .btn {
+  border-color: rgba(124, 58, 237, 0.36);
+  background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.26);
+}
+
+:root[data-theme="light-glass"] .btn-primary {
+  background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+}
+
+:root[data-theme="light-glass"] .lesson-content p {
+  color: #1e293b;
+}
+
+:root[data-theme="light-glass"] .lesson-content a {
+  color: #6d28d9;
+}
+
+:root[data-theme="light-glass"] .lesson-content hr {
+  border-top-color: rgba(15, 23, 42, 0.14);
+}
+
+:root[data-theme="light-glass"] .lesson-note {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+:root[data-theme="light-glass"] .lesson-warning {
+  background: rgba(244, 63, 94, 0.1);
+}
+
+:root[data-theme="light-glass"] .lesson-soft {
+  border-left-color: rgba(15, 23, 42, 0.24);
+  background: rgba(15, 23, 42, 0.04);
+}
+
+:root[data-theme="light-glass"] .lesson-attachments #attachmentsList a.attach-link {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+@media (hover:hover) {
+  :root[data-theme="light-glass"] .lesson-attachments #attachmentsList a.attach-link:hover {
+    background: rgba(248, 250, 252, 0.98);
+    border-color: rgba(124, 58, 237, 0.28);
+  }
+}
+
+:root[data-theme="light-glass"] .lesson-attachments #attachmentsList .attach-name::before {
+  background: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+:root[data-theme="light-glass"] .file-tag,
+:root[data-theme="light-glass"] .lesson-attachments #attachmentsList .file-tag {
+  border-color: rgba(124, 58, 237, 0.3);
+  background: rgba(124, 58, 237, 0.12);
+  color: #4c1d95;
+}
+
+/* =========================
+   WOW LIGHT-GLASS THEME
+   ========================= */
+:root[data-theme="light-glass"] {
+  --bg: #F6F8FF;
+  --text: #0F172A;
+  --muted: #64748B;
+  --accent: #6D28D9;
+  --border: rgba(15, 23, 42, 0.10);
+  --shadow:
+    0 24px 48px rgba(15, 23, 42, 0.12),
+    0 10px 20px rgba(109, 40, 217, 0.08),
+    0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+:root[data-theme="light-glass"],
+:root[data-theme="light-glass"] body {
+  color: var(--text);
+  background:
+    radial-gradient(900px 640px at 8% -12%, rgba(109, 40, 217, 0.14), transparent 60%),
+    radial-gradient(760px 560px at 104% 8%, rgba(59, 130, 246, 0.12), transparent 58%),
+    radial-gradient(620px 460px at 50% 116%, rgba(236, 72, 153, 0.08), transparent 64%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%230f172a' fill-opacity='0.05'%3E%3Ccircle cx='13' cy='17' r='1.05'/%3E%3Ccircle cx='61' cy='93' r='0.9'/%3E%3Ccircle cx='109' cy='41' r='1'/%3E%3Ccircle cx='31' cy='123' r='0.95'/%3E%3Ccircle cx='126' cy='112' r='0.88'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(180deg, #EEF2FF 0%, var(--bg) 55%, #F8FAFF 100%);
+}
+
+:root[data-theme="light-glass"] .card,
+:root[data-theme="light-glass"] .lesson-card,
+:root[data-theme="light-glass"] .lesson-block,
+:root[data-theme="light-glass"] .video-link-card,
+:root[data-theme="light-glass"] .content-card,
+:root[data-theme="light-glass"] .attachments,
+:root[data-theme="light-glass"] .state,
+:root[data-theme="light-glass"] .progress-wrap {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :root[data-theme="light-glass"] .card,
+  :root[data-theme="light-glass"] .lesson-card,
+  :root[data-theme="light-glass"] .lesson-block,
+  :root[data-theme="light-glass"] .video-link-card,
+  :root[data-theme="light-glass"] .content-card,
+  :root[data-theme="light-glass"] .attachments,
+  :root[data-theme="light-glass"] .state,
+  :root[data-theme="light-glass"] .progress-wrap {
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+    backdrop-filter: blur(14px) saturate(130%);
+  }
+}
+
+:root[data-theme="light-glass"] .profile-meta p,
+:root[data-theme="light-glass"] .lesson-subtitle,
+:root[data-theme="light-glass"] .lesson-card p,
+:root[data-theme="light-glass"] .progress-top,
+:root[data-theme="light-glass"] .top-back,
+:root[data-theme="light-glass"] .badge {
+  color: var(--muted);
+}
+
+:root[data-theme="light-glass"] .lesson-card-body,
+:root[data-theme="light-glass"] .content-card,
+:root[data-theme="light-glass"] .attachments,
+:root[data-theme="light-glass"] .video-link-card,
+:root[data-theme="light-glass"] .lesson-content {
+  color: var(--text);
+}
+
+:root[data-theme="light-glass"] .progress-bar {
+  background: rgba(148, 163, 184, 0.24);
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme="light-glass"] .progress-fill {
+  background: linear-gradient(90deg, #8B5CF6 0%, #6D28D9 52%, #4F46E5 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.34) inset, 0 6px 16px rgba(109, 40, 217, 0.36);
+}
+
+:root[data-theme="light-glass"] .lesson-day {
+  color: #334155;
+}
+
+:root[data-theme="light-glass"] .status.done {
+  color: #4C1D95;
+  background: rgba(109, 40, 217, 0.14);
+  border: 1px solid rgba(109, 40, 217, 0.18);
+}
+
+:root[data-theme="light-glass"] .status.locked {
+  color: #9F1239;
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.16);
+}
+
+:root[data-theme="light-glass"] .lesson-preview {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.00) 44%, rgba(15, 23, 42, 0.16) 100%),
+    linear-gradient(120deg, transparent 34%, rgba(255, 255, 255, 0.20) 50%, transparent 66%),
+    linear-gradient(145deg, rgba(109, 40, 217, 0.11), rgba(59, 130, 246, 0.08));
+}
+
+:root[data-theme="light-glass"] .lesson-preview::after {
+  background-image: none;
+}
+
+:root[data-theme="light-glass"] .btn,
+:root[data-theme="light-glass"] .btn-primary {
+  border-color: rgba(109, 40, 217, 0.34);
+  color: #fff;
+  background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 58%, #DB2777 100%);
+  box-shadow:
+    0 10px 22px rgba(109, 40, 217, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.20) inset;
+}
+
+:root[data-theme="light-glass"] .btn:active,
+:root[data-theme="light-glass"] .btn-primary:active {
+  transform: scale(0.98);
+}
+
+:root[data-theme="light-glass"] .file-tag,
+:root[data-theme="light-glass"] .lesson-attachments #attachmentsList .file-tag {
+  color: #4C1D95;
+  background: rgba(109, 40, 217, 0.12);
+  border-color: rgba(109, 40, 217, 0.24);
 }

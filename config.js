@@ -12,7 +12,7 @@ window.APP_CONFIG = {
   courseId: "course_test",
 
   // Публичный CSV URL из Google Sheets
-  googleSheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNflPaDr-wv9828cCoILq6HZZvXxHcKdXhDyJlos26wbzZnlNE6fzfRGFpDFrSCSPrQdUoAiOApzBP/pub?output=csv",
+  googleSheetCsvUrl: "https://docs.google.com/spreadsheets/d/1pm8z47TTr_LnFE9HCPz4vOgltMpTjucYZJPvwsmK4us/export?format=csv",
 
   // Локальный демо-файл
   sampleCsvPath: "./sample-sheet.csv"

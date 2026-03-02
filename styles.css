@@ -11,6 +11,24 @@
   --shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
 }
 
+/* =========================
+   THEME TOKENS: LIGHT_AURORA
+   ========================= */
+:root[data-theme="light-glass"] {
+  --bg: #f6f7ff;
+  --bg-2: #eef2ff;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-2: rgba(255, 255, 255, 0.82);
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #6d28d9;
+  --accent-2: #8b5cf6;
+  --border: rgba(17, 24, 39, 0.08);
+  --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+  --shadow-strong: 0 16px 38px rgba(17, 24, 39, 0.12);
+  --ring: 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+}
+
 * { box-sizing: border-box; }
 
 html,

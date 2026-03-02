@@ -11,6 +11,24 @@
   --shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
 }
 
+/* =========================
+   THEME TOKENS: LIGHT_AURORA
+   ========================= */
+:root[data-theme="light-glass"] {
+  --bg: #f6f7ff;
+  --bg-2: #eef2ff;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-2: rgba(255, 255, 255, 0.82);
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #6d28d9;
+  --accent-2: #8b5cf6;
+  --border: rgba(17, 24, 39, 0.08);
+  --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+  --shadow-strong: 0 16px 38px rgba(17, 24, 39, 0.12);
+  --ring: 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+}
+
 * { box-sizing: border-box; }
 
 html,
@@ -1009,4 +1027,133 @@ a { color: inherit; }
   color: #3f2a93;
   background: rgba(109, 40, 217, 0.11);
   border-color: rgba(109, 40, 217, 0.24);
+}
+
+
+/* ===== THEME: LIGHT_AURORA (final overrides) ===== */
+:root[data-theme="light-glass"],
+:root[data-theme="light-glass"] body {
+  color: var(--text);
+  background:
+    radial-gradient(860px 620px at 8% -18%, rgba(139, 92, 246, 0.18), transparent 62%),
+    radial-gradient(760px 560px at 102% 10%, rgba(99, 102, 241, 0.14), transparent 58%),
+    radial-gradient(620px 420px at 52% 118%, rgba(167, 139, 250, 0.11), transparent 64%),
+    radial-gradient(2px 2px at 24px 32px, rgba(15, 23, 42, 0.018) 50%, transparent 52%),
+    radial-gradient(2px 2px at 98px 112px, rgba(15, 23, 42, 0.015) 50%, transparent 52%),
+    linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 55%, #fbfcff 100%);
+  background-size: auto, auto, auto, 140px 140px, 140px 140px, auto;
+}
+
+:root[data-theme="light-glass"] .section-title,
+:root[data-theme="light-glass"] .profile-meta h1,
+:root[data-theme="light-glass"] .lesson-page h1,
+:root[data-theme="light-glass"] .lesson-card h3,
+:root[data-theme="light-glass"] .lesson-content h2,
+:root[data-theme="light-glass"] .lesson-content h3 {
+  color: var(--text);
+}
+
+:root[data-theme="light-glass"] .card,
+:root[data-theme="light-glass"] .lesson-card,
+:root[data-theme="light-glass"] .video-link-card,
+:root[data-theme="light-glass"] .content-card,
+:root[data-theme="light-glass"] .attachments,
+:root[data-theme="light-glass"] .lesson-block,
+:root[data-theme="light-glass"] .state {
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.86));
+  border: 1px solid var(--border);
+  box-shadow: var(--ring), var(--shadow);
+}
+
+:root[data-theme="light-glass"] .lesson-card {
+  box-shadow: var(--ring), var(--shadow-strong);
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :root[data-theme="light-glass"] .card,
+  :root[data-theme="light-glass"] .lesson-card,
+  :root[data-theme="light-glass"] .video-link-card,
+  :root[data-theme="light-glass"] .content-card,
+  :root[data-theme="light-glass"] .attachments,
+  :root[data-theme="light-glass"] .lesson-block,
+  :root[data-theme="light-glass"] .state {
+    -webkit-backdrop-filter: blur(10px) saturate(128%);
+    backdrop-filter: blur(10px) saturate(128%);
+  }
+}
+
+:root[data-theme="light-glass"] .lesson-card p,
+:root[data-theme="light-glass"] .profile-meta p,
+:root[data-theme="light-glass"] .lesson-subtitle,
+:root[data-theme="light-glass"] .progress-top,
+:root[data-theme="light-glass"] .top-back,
+:root[data-theme="light-glass"] .badge {
+  color: var(--muted);
+}
+
+:root[data-theme="light-glass"] .lesson-day { color: #64748b; }
+
+:root[data-theme="light-glass"] .progress-bar {
+  background: rgba(148, 163, 184, 0.28);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+:root[data-theme="light-glass"] .progress-fill {
+  background: linear-gradient(90deg, #6d28d9 0%, #8b5cf6 100%);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.36) inset, 0 6px 14px rgba(109, 40, 217, 0.24);
+}
+
+:root[data-theme="light-glass"] .btn,
+:root[data-theme="light-glass"] .btn-primary {
+  border-color: rgba(109, 40, 217, 0.35);
+  color: #fff;
+  background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%);
+  box-shadow: 0 8px 18px rgba(109, 40, 217, 0.24), 0 0 0 1px rgba(255,255,255,0.24) inset;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+@media (hover:hover) {
+  :root[data-theme="light-glass"] .btn:hover,
+  :root[data-theme="light-glass"] .btn-primary:hover,
+  :root[data-theme="light-glass"] .lesson-card:hover {
+    transform: translateY(-1px);
+  }
+}
+
+:root[data-theme="light-glass"] .btn:active,
+:root[data-theme="light-glass"] .btn-primary:active {
+  transform: scale(0.99);
+}
+
+:root[data-theme="light-glass"] .status.done {
+  color: #5b21b6;
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(139, 92, 246, 0.26);
+}
+
+:root[data-theme="light-glass"] .status.locked {
+  color: #9f1239;
+  background: rgba(244, 63, 94, 0.13);
+  border: 1px solid rgba(244, 63, 94, 0.22);
+}
+
+:root[data-theme="light-glass"] .lesson-preview {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.08)),
+    linear-gradient(145deg, rgba(139, 92, 246, 0.07), rgba(99, 102, 241, 0.05));
+}
+
+:root[data-theme="light-glass"] .lesson-preview::after {
+  display: none;
+}
+
+:root[data-theme="light-glass"] .lesson-content a,
+:root[data-theme="light-glass"] .attach-link {
+  color: #6d28d9;
+}
+
+:root[data-theme="light-glass"] .lesson-content a:hover,
+:root[data-theme="light-glass"] .attach-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

@@ -630,3 +630,24 @@ a { color: inherit; }
     color-mix(in srgb, var(--accent) 85%, #6D28D9)
   );
 }
+.card,
+.lesson-card,
+.progress-wrap,
+.profile-card {
+  border-width: 1.5px;
+}
+.lesson-meta {
+  align-items: center;
+  gap: 8px;
+}
+
+.lesson-day {
+  font-weight: 500;
+  color: #475569;
+}
+
+.status {
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+}

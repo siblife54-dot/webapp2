@@ -11,7 +11,7 @@ window.APP_CONFIG = {
 
   textColor: "#0F172A",
   mutedColor: "#64748B",
-  borderColor: "rgba(0,0,0,0.05)",
+  borderColor: "rgba(0,0,0,0.07)",
 
   // Курс
   courseId: "course_alpha",

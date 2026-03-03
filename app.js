@@ -10,7 +10,7 @@
     return window.APP_CONFIG || {};
   }
 
-  function applyTheme(config) {
+  // function applyTheme(config) {
   var root = document.documentElement;
 
   if (config.accentColor) root.style.setProperty("--accent", config.accentColor);

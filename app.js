@@ -11,14 +11,15 @@
   }
 
   function applyTheme(config) {
-    var root = document.documentElement;
-    root.style.setProperty("--accent", config.accentColor || "#8B5CF6");
-    root.style.setProperty("--bg", config.backgroundColor || "#0E1B2B");
-    root.style.setProperty("--card", config.cardColor || "#12243a");
+  var root = document.documentElement;
 
-    var brand = document.getElementById("brandName");
-    if (brand) brand.textContent = config.brandName || "Кабинет курса";
-  }
+  if (config.accentColor) root.style.setProperty("--accent", config.accentColor);
+  if (config.backgroundColor) root.style.setProperty("--bg", config.backgroundColor);
+  if (config.cardColor) root.style.setProperty("--card", config.cardColor);
+
+  var brand = document.getElementById("brandName");
+  if (brand) brand.textContent = config.brandName || "Кабинет курса";
+}
 
   function getTelegramUser() {
     var user = globalThis.Telegram?.WebApp?.initDataUnsafe?.user;

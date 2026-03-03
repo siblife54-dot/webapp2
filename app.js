@@ -10,15 +10,35 @@
     return window.APP_CONFIG || {};
   }
 
-  // function applyTheme(config) {
+  function applyTheme(config) {
   var root = document.documentElement;
 
-  if (config.accentColor) root.style.setProperty("--accent", config.accentColor);
-  if (config.backgroundColor) root.style.setProperty("--bg", config.backgroundColor);
-  if (config.cardColor) root.style.setProperty("--card", config.cardColor);
+  if (!config) return;
+
+  if (config.accentColor)
+    root.style.setProperty("--accent", config.accentColor);
+
+  if (config.backgroundColor)
+    root.style.setProperty("--bg", config.backgroundColor);
+
+  if (config.cardColor)
+    root.style.setProperty("--card", config.cardColor);
+
+  if (config.card2Color)
+    root.style.setProperty("--card-2", config.card2Color);
+
+  if (config.textColor)
+    root.style.setProperty("--text", config.textColor);
+
+  if (config.mutedColor)
+    root.style.setProperty("--muted", config.mutedColor);
+
+  if (config.borderColor)
+    root.style.setProperty("--border", config.borderColor);
 
   var brand = document.getElementById("brandName");
-  if (brand) brand.textContent = config.brandName || "Кабинет курса";
+  if (brand)
+    brand.textContent = config.brandName || "Кабинет курса";
 }
 
   function getTelegramUser() {

@@ -665,6 +665,20 @@
       }
     }
   }
+// Делает всю карточку урока кликабельной
+document.addEventListener("click", function(e){
 
+  const card = e.target.closest(".lesson-card");
+  if(!card) return;
+
+  // если нажали на кнопку — пусть работает как раньше
+  if(e.target.closest(".btn")) return;
+
+  const button = card.querySelector(".btn");
+  if(button){
+    button.click();
+  }
+
+});
   init();
 })();

@@ -651,3 +651,21 @@ a { color: inherit; }
   padding: 4px 10px;
   font-size: 13px;
 }
+/* ===== FIX: readable "Пройдено" badge ===== */
+
+.status,
+.lesson-status,
+.badge {
+  opacity: 1 !important;
+  color: #6D28D9 !important;
+  font-weight: 600;
+
+  background: rgba(167,139,250,0.18);
+  border: 1px solid rgba(167,139,250,0.35);
+}
+
+/* текст День */
+.lesson-day {
+  opacity: 0.8 !important;
+  color: #475569 !important;
+}
